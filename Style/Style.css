@@ -54,7 +54,7 @@
             height: 700px;
             border: none;
         }
-	.imagen-responsive {
+	#imagen-responsive {
 		max-width: 100%;
 		height: auto;
    	 }
