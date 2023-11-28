@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Hermana de Shakespeare</title>
+	<link rel="icon" href="Style/Imagenes/Icono.ico">
+    <link rel="stylesheet" href="Style/Style.css">
+<style>
+        /* Estilos para el carrusel */
+        #carrusel {
+            width: 50%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        #imagenes {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .imagen {
+            width: 103%;
+        }
+
+        /* Botones de navegación del carrusel */
+        #anterior, #siguiente {
+            cursor: pointer;
+            font-size: 24px;
+            margin-top: 50px;
+        }
+		.creadores-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+		}
+
+		.creador {
+    text-align: center;
+    max-width: 300px;
+		}
+
+		.creador img {
+    width: 50%;
+    border-radius: 50%;
+		}
+
+		.creador h3 {
+    margin-top: 10px;
+		}
+    </style>
+</head>
+<body>
+    <header>
+		<img src="Style/imagenes/banner.png" alt="Banner">
+    </header>
+    <nav>
+        <a href="#seccionPrincipal">LHDS</a>
+        <a href="#seccionEncuesta">Encuesta</a>
+        <a href="#recorridoVirtual">Recorrido Virtual</a>
+        <a href="#video">Video</a>
+		<a href="#creadoras">Creadoras</a>
+    </nav>
+	 <br>
+	 <div id="carrusel">
+        <div id="imagenes">
+            <img class="imagen" src="Style/Imagenes/1.jpeg" alt="Imagen 1">
+            <img class="imagen" src="Style/imagenes/2.jpg" alt="Imagen 2">
+			<img class="imagen" src="Style/imagenes/3.jpg" alt="Imagen 3">
+			<img class="imagen" src="Style/imagenes/4.jpg" alt="Imagen 4">
+            <!-- Agrega más imágenes según sea necesario -->
+        </div>
+    </div>
+		 <!-- Funcionamiento del carrusel-->
+	    <script>
+        // Variables
+        let index = 0;
+        const imagenes = document.getElementById('imagenes');
+        const totalImagenes = document.querySelectorAll('.imagen').length;
+        const anchoImagen = document.querySelector('.imagen').clientWidth;
+        // Funciones para la navegación del carrusel
+        function siguienteImagen() {
+            if (index < totalImagenes - 1) {
+                index++;
+            } else {
+                index = 0;
+            }
+            actualizarCarrusel();
+        }
+
+        function imagenAnterior() {
+            if (index > 0) {
+                index--;
+            } else {
+                index = totalImagenes - 1;
+            }
+            actualizarCarrusel();
+        }
+
+        // Cambio automático de imagen cada 3 segundos (3000 milisegundos)
+        setInterval(siguienteImagen, 3000);
+
+        function actualizarCarrusel() {
+            imagenes.style.transform = `translateX(${-index * anchoImagen}px)`;
+        }
+    </script>
+		<!-- Fin del funcionamiento del carrusel -->
+		
+    <section id="seccionPrincipal">
+        <h2>Acerca de La Hermana de Shakespeare</h2>
+        <p>La hermana de Shakespeare es una colectiva cultural que se dedica a la gestión de proyectos y eventos multidisciplinarios en el área de Monterrey,
+		Nuevo León. La Hermana, como le decimos todxs, fue fundada en el año 2018, junto con su primera edición; y desde entonces ha servido como plataforma 
+		para impulsar a los artistas jóvenes y emergentes de la ciudad.El equipo de La hermana de Shakespeare está conformado por cuatro mujeres apasionadas
+		por el arte y la cultura: Paola Pavón, Susana Pérez, Regina García y Daniela Martínez. A lo largo de estos 5 años La hermana de Shakespeare ha tenido
+		como misión crear un ambiente seguro, dinámico y libre para todxs lxs artistas emergentes de la ciudad. Funciona como una plataforma en la que lxs
+		jóvenes pueden expresar y comunicar su arte por primera vez, y volverse parte de una comunidad. </p>
+		
+		<p>Con diez ediciones logradas, La Hermana de Shakespeare ha captado la atención del público y formado su propia comunidad en la que cada individuo 
+		se siente parte del proyecto; su principal visión es continuar con la gestión de eventos culturales que impulsen el ejercicio y la pasión por la 
+		escritura, música y muchas otras manifestaciones artísticas. </p>
+    </section>
+
+    <section id="seccionEncuesta">
+        <h2>Sección de Encuesta</h2>
+        <p>¡Gracias por participar en nuestra encuesta! Por favor, complete nuestro <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=EZDKymp73kSGHwlaLKiDt7czD-gJ6iVMvcEFH7BzjzBUQzQ5RDAyNTRSNVVVVzg4SzU3MjZBMUM5VC4u
+
+">formulario de encuesta</a>.</p>
+
+    <form action="/procesar_encuesta" method="post" id="formulario">
+        <!-- Contenido del formulario -->
+    </form>
+    </section>
+
+
+	  <section id="creadoras" class="creadores-section">
+        <div class="creador">
+            <img src="Style/Imagenes/Paola.jpg" alt="Creador 1">
+            <h3>Paola Pav&oacute;n</h3>
+            <p>Fundadora</p>
+			<p>Relaciones p&uacute;blicas </p>
+			<p>Ayuda con la estructura HTML</p>
+        </div>
+        <div class="creador">
+            <img src="Style/Imagenes/Susy.jpg" alt="Creador 2">
+            <h3>Susana P&eacute;rez</h3>
+            <p>Fundadora</p>
+			<p>Diseño</p>
+			<p>Generación de c&oacutedigo CSS</p>
+        </div>
+		     <div class="creador">
+            <img src="Style/Imagenes/Regina.jpg" alt="Creador 3">
+            <h3>Regina Garc&iacute;a</h3>
+            <p>Producci&oacute;n </p>
+			<p>Generación de c&oacutedigo CSS</p>
+        </div>
+        <div class="creador">
+            <img src="Style/Imagenes/Daniela.jpeg" alt="Creador 4">
+            <h3>Daniela Mart&iacute;nez</h3>
+            <p>Registro audiovisual </p>
+			<p>Ayuda con la estructura HTML</p>
+        <!-- Agrega más creadores según sea necesario -->
+    </section>
+    <section id="video">
+        <h2>Video</h2>
+         <iframe
+        width="560"
+        height="500"
+        src="https://www.youtube.com/embed/2Wrpkp71VIk?si=uAf-q3riynyKWHtW"
+        frameborder="0"
+        allowfullscreen
+    ></iframe>
+    </section>
+	
+	
+ <br><br>
+
+    <footer>
+        <p>&copy; 2023 La Hermana de Shakespeare</p>
+    </footer>
+
+    <script>
+        // Función para cerrar el menú al hacer clic en un enlace
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function () {
+                document.querySelector('input[type="checkbox"]').checked = false;
+            });
+        });
+    </script>
+
+</body>
+</html>
+
